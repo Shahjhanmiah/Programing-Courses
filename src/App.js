@@ -9,6 +9,7 @@ import Login from './Login/Login';
 import Register from './Register/Register';
 import Faq from './Faq/Faq';
 import Sidebar from './Sidebar/Sidebar';
+import DetaillsPage from './DetailsPage/DetaillsPage';
 
 
 
@@ -48,7 +49,19 @@ function App() {
         {
           path:'/sidebar',
           element:<Sidebar></Sidebar>
-        }
+        },
+        {
+           path:'/detailspage',
+            // loader:()=>fetch(`http://localhost:5000/programings/1$`),
+            loader:({params})=>fetch(`http://localhost:5000/programings/1${params.id}`),
+    
+          
+            element:<DetaillsPage></DetaillsPage>
+          }
+          
+  
+        
+       
 
       ]
     },
