@@ -7,6 +7,8 @@ import Courses from './Courses/Courses';
 import Blog from './Blog/Blog';
 import Login from './Login/Login';
 import Register from './Register/Register';
+import Faq from './Faq/Faq';
+import Sidebar from './Sidebar/Sidebar';
 
 
 
@@ -21,7 +23,8 @@ function App() {
           element:<Home></Home>
         },
         {
-          path:'/Courses',
+          path:'/courses',
+          loader:()=>fetch('http://localhost:5000/programing'),
           element:<Courses></Courses>,
         },
         {
@@ -36,8 +39,17 @@ function App() {
         {
           path:'register',
           element:<Register></Register>
+        },
+        {
+          path:'/faq',
+          element:<Faq></Faq>
+
+        },
+        {
+          path:'/sidebar',
+          element:<Sidebar></Sidebar>
         }
-        
+
       ]
     },
     

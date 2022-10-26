@@ -1,0 +1,40 @@
+[
+    {
+        "id":1,
+        "name":"python",
+        "couress":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwn6OFTaK4Six4Dwv-GL-4HM8vKn1N4Nfj3w&usqp=CAU",
+        "details":"This complete Python course is for beginners. You don’t need any previous programming experience to follow along and all you need to code in Python is a web browser."
+    },
+    {
+        "id":2,
+        "name":"javaScript",
+        "couress":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh1n1I_zvcYuDFcFHpNhe6LtzOkn-W5jBIY5FEZw_wghLP0yDSFYMa5k4cW_LQtWlEANI&usqp=CAU",
+        "details":"JavaScript is among the most favorable programming languages to learn for hobby projects and career/job perspectives. Make friends with JavaScript, and you advance your career as a JS developer. ."
+    },
+    {
+        "id":3,
+        "name":"java",
+        "couress":"https://5.imimg.com/data5/QQ/CT/AO/GLADMIN-25397883/selection-064-500x500.png",
+        "details":"Java is among the most popular programming languages out there, mainly because of how versatile and compatible it is ."
+    },
+   
+    {
+        "id":4,
+        "name":"C",
+        "couress":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP1hMXjoed4hpDq1IM1U1FHIkegKKKULqApnJVEjhZyjolBE--bQfEwfzM71E6KSSHbsg&usqp=CAU.",
+        "details":"C is a powerful general-purpose programming language. It can be used to develop software like operating systems, databases, compilers, and so on."
+    },
+    {
+        "id":5,
+        "name":"C++",
+        "couress":"hhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-pUNTlmW09QBDH_ZZglXPZ-FoiuY9GCJNsWn8JwKTeb6EyUWtsCNoaMoJ4vZ-s1KDVc&usqp=CAU",
+        "details":"C++ is a powerful general-purpose programming language. It can be used to develop operating systems, browsers, games, and so on. C++ supports different ways ...."
+    },
+    {
+        "id":6,
+        "name":"C#",
+        "couress":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUCfId_EnRR2d8JWJ7Wrq0oimGx668DAjPuzz8HXaOkN_U-A1dyimzXJJ3_hETGh8ebys&usqp=CAU",
+        "details":"C# is a general-purpose, high-level multi-paradigm programming language. C# encompasses static typing, strong typing, lexically scoped, imperative,"
+    }
+   
+]
