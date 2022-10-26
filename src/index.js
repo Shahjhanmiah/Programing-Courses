@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { ToastContainer,} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import reportWebVitals from './reportWebVitals';
 import AuthProvidr from './Context/AuthProvidr';
 
@@ -11,6 +13,7 @@ root.render(
    <AuthProvidr>
    <App />
    </AuthProvidr>
+   <ToastContainer position="top-center" ></ToastContainer>
   </React.StrictMode>
 );
 

@@ -10,6 +10,8 @@ import Register from './Register/Register';
 import Faq from './Faq/Faq';
 import Sidebar from './Sidebar/Sidebar';
 import DetaillsPage from './DetailsPage/DetaillsPage';
+import Profile from './Profile/Profile';
+import DetailsShow from './DetailsShow/DetailsShow';
 
 
 
@@ -51,13 +53,24 @@ function App() {
           element:<Sidebar></Sidebar>
         },
         {
-           path:'/detailspage',
+           path:'/detailspage/:id',
             // loader:()=>fetch(`http://localhost:5000/programings/1$`),
-            loader:({params})=>fetch(`http://localhost:5000/programings/1${params.id}`),
+            loader:({params})=>fetch(`http://localhost:5000/programing/${params.id}`),
     
           
             element:<DetaillsPage></DetaillsPage>
+          },
+          {
+            path:'/profile',
+            element:<Profile></Profile>
+          },
+          {
+          path:'/detaillsShow/:id',
+
+          loader:({params})=>fetch(`http://localhost:5000/programing/${params.id}`),
+          element:<DetailsShow></DetailsShow>
           }
+
           
   
         

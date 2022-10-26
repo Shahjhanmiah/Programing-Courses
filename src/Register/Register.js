@@ -1,9 +1,12 @@
+import { getAuth } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvidr';
+import app from '../Firebase/Firebase.init';
+const auth = getAuth(app)
 
 const Register = () => {
-    const {createUser,} = useContext(AuthContext)
+    const {createUser, updateName,verifayEmail} = useContext(AuthContext)
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name.value;
@@ -12,10 +15,41 @@ const Register = () => {
         console.log(name,email,password)
         createUser(email,password)
         .then(reslut => {
-            //Updatename
             console.log(reslut.user)
     
         })
+        .catch(error => {
+            console.error(error);
+
+            updateName(name,{
+                displauName:name,
+                photoURL:'https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1637863831.jpg',
+               
+
+            })
+            .then( ()=>{
+                console.log(auth.currentUser.displayName)
+                alert("Name Updated")
+
+                
+                verifayEmail()
+                .then(() => {
+                    // Email verification sent!
+                    alert('pleace cheak your email')
+                    console.log(auth.currentUser)
+                })
+            })
+            
+            .catch((error) => {
+                alert(error.message)
+            });
+            
+           
+            })
+
+       
+
+        
         
         //  createat account 
     }
