@@ -1,6 +1,7 @@
 import { getAuth } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthProvidr';
 import app from '../Firebase/Firebase.init';
 const auth = getAuth(app)
@@ -29,15 +30,8 @@ const Register = () => {
             })
             .then( ()=>{
                 console.log(auth.currentUser.displayName)
-                alert("Name Updated")
+                toast.info('cheak your username!',{autoClose:500})
 
-                
-                verifayEmail()
-                .then(() => {
-                    // Email verification sent!
-                    alert('pleace cheak your email')
-                    console.log(auth.currentUser)
-                })
             })
             
             .catch((error) => {
