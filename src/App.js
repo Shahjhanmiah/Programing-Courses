@@ -31,7 +31,7 @@ function App() {
         {
           path:'/courses',
           loader:()=>fetch('http://localhost:5000/programing'),
-          element:<PrivateRoute><Courses></Courses></PrivateRoute>
+          element:<Courses></Courses>
         },
         {
           path:'/blog',
