@@ -33,7 +33,7 @@ const Login = () => {
         signGoogle()
         .then(result=>{
             console.log(result.user);
-            toast.success('cheak your email')
+            toast.success('cheak your email success')
 
         })
         .catch(error => toast.error(error.message))
@@ -46,6 +46,7 @@ const Login = () => {
         .then(result=>{
         
             console.log(result.user);
+            toast.success('gihub success')
             
         })
         .catch(error=>console.log(error.message))
