@@ -1,52 +1,67 @@
 import { getAuth } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthProvidr';
 import app from '../Firebase/Firebase.init';
 const auth = getAuth(app)
 
 const Register = () => {
-    const {createUser, updateName,verifayEmail} = useContext(AuthContext)
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log(name,email,password)
-        createUser(email,password)
-        .then(reslut => {
-            console.log(reslut.user)
+    const navigate = useNavigate()
     
-        })
-        .catch(error => {
-            console.error(error);
+    const {createUser, updateName,verifayEmail, updateUserProfile} = useContext(AuthContext)
+   
+    const handleSubmit = event => {
+        event.preventDefault()
+        console.log(event.target.email);
+    
+    
+        const name = event.target.name.value
+        // const photoURL = event.targer.photoURL.value;
+        const email = event.target.email.value
+        const password = event.target.password.value
+    
+        //1. Create Account
+        createUser(email, password)
+          .then(result => {
+            console.log(result.user)
+            navigate('/login')
 
-            updateName(name,{
-                displauName:name,
-                photoURL:'https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1637863831.jpg',
-               
 
-            })
-            .then( ()=>{
-                console.log(auth.currentUser.displayName)
-                toast.info('cheak your username!',{autoClose:500})
-
-            })
-            
-            .catch((error) => {
-                alert(error.message)
-            });
-            
-           
-            })
-
-       
-
+            // user profiel
+            const handleUpdateUserProfile = (name,photoURL)=>{
+                const profile = {
+                    displaName: name,
+                    photoURL: photoURL
         
-        
-        //  createat account 
-    }
+                }
+                updateUserProfile(profile)
+                .then(()=>{})
+                .catch(error=>console.error(error));
+            }
+    
+            //2. Update Name
+            updateName(name)
+              .then(() => {
+                toast.success('Name Updated')
+    
+                //3. Email verification
+                
+              })
+              .catch(error => {
+                toast.error(error.message)
+              })
+              verifayEmail()
+                  .then(() => {
+                    toast.success('Please check your email for verification link')
+                   
+                  })
+                  .catch(error => {
+                    toast.error(error.message)
+                  })
+          })
+          
+      }
    
         
     return (

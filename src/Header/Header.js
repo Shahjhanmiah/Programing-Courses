@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FaArrowLeft, FaArrowRight, FaRegMinusSquare, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvidr';
 import './Header.css';
 
 const Header = () => {
+    const {user,logOut} = useContext(AuthContext);
     return (
         <div>
             <nav className="p-3 bg-gray-50 rounded border-gray-200 dark:bg-gray-800 ">
@@ -58,6 +61,15 @@ const Header = () => {
                                 </Link>
                                 
                             </li>
+                            <li>
+                            <Link  to="/profile">
+                            {user?.photoURL ?
+                            <img style={{height:'45px'}} roundedCircle src ={user?.photoURL}></img>
+                            :<FaArrowRight></FaArrowRight>
+                            }
+                            </Link>
+                            </li>
+                            
                         </ul>
                     </div>
 

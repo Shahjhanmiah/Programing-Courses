@@ -12,6 +12,8 @@ import Sidebar from './Sidebar/Sidebar';
 import DetaillsPage from './DetailsPage/DetaillsPage';
 import Profile from './Profile/Profile';
 import DetailsShow from './DetailsShow/DetailsShow';
+import ErrorPage from './ErrorPage/ErrorPage';
+import PrivateRoute from './ContextPrivate/PrivateRoute';
 
 
 
@@ -20,6 +22,7 @@ function App() {
     {
       path:'/',
       element:<Main></Main>,
+      errorElement: <ErrorPage />,
       children:[
         {
           path:'/home',
@@ -28,7 +31,7 @@ function App() {
         {
           path:'/courses',
           loader:()=>fetch('http://localhost:5000/programing'),
-          element:<Courses></Courses>,
+          element:<PrivateRoute><Courses></Courses></PrivateRoute>
         },
         {
           path:'/blog',

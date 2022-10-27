@@ -1,48 +1,74 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/Firebase.init';
-import { createUserWithEmailAndPassword, updateUserProfile, getAuth, sendEmailVerification, updateProfile, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword,} from "firebase/auth";
+import { createUserWithEmailAndPassword,  getAuth, sendEmailVerification, updateProfile, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword,} from "firebase/auth";
 
 const auth = getAuth(app)
   export const AuthContext = createContext()
 
 const AuthProvidr = ({children}) => {
-    const {user,setUser} = useState()
+    const [user,setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
     const googleprovider = new  GoogleAuthProvider();
 
     //  Create user
 
     const createUser = (email, password) => {
+      setLoading(true);
         
         return createUserWithEmailAndPassword(auth, email, password)
       }
 
       //  userdisplsy
-      const updateUserProfile = (profile) =>{
-        return updateUserProfile(auth.currentUser,profile);
-    }
+      
     //userdisplay 
     const updateName = name => {
+      setLoading(true);
      
       return updateProfile(auth.currentUser, { displayName: name })
     }
 
+    // useerProfile
+    const updateUserProfile = (profile) =>{
+      setLoading(true);
+      return updateUserProfile(auth.currentUser,profile);
+  }
+    
+
     // verifay 
-    const verifyEmail= () => {
+    const verifyEmail = () => {
+      setLoading(true);
+    
       return sendEmailVerification(auth.currentUser)
     }
 
     //  google sigin 
     const signGoogle = ()=>{
+      setLoading(true);
       return signInWithPopup(auth,googleprovider)
   }
   // login pasword 
   const signin = (email, password) => {
+    setLoading(true);
 
     return signInWithEmailAndPassword(auth, email, password)
   }
 
+  useEffect(() => {
+    //this part will execute once the component is mounted.
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser)
+      setLoading(false)
+     
+    })
+
+    return () => {
+      //this part will execute once the component is unmounted.
+      unsubscribe()
+    }
+  }, [])
+
   
-    const authInfo = { user,createUser,updateUserProfile,verifyEmail,updateName,signGoogle, signin
+    const authInfo = { user,createUser,updateUserProfile,verifyEmail,updateName,signGoogle, signin,loading
     }
        
        
