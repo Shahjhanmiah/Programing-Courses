@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const Login = () => {
     const navigate = useNavigate()
     const location  = useLocation();
-    const { signGoogle,signin} = useContext(AuthContext)
+    const { signGoogle,signin,signGithub} = useContext(AuthContext)
     const from = location.state?.from?.pathname || '/';
 
 
@@ -21,26 +21,35 @@ const Login = () => {
 
       signin(email, password)
       .then(result => {
-        toast.success('Login Success!')
        
         console.log(result.user)
         navigate(from,{replace:true})
       })
       .catch(error => toast.error(error.message))
   }
-     
-       
-    
-        
-            
-      
 
+  
     const handelGoogleSign =()=>{
         signGoogle()
         .then(result=>{
             console.log(result.user);
+            toast.success('cheak your email')
 
         })
+        .catch(error => toast.error(error.message))
+        //  github singin 
+        
+       
+    }
+    const handleGithubSign =()=>{
+        signGithub()
+        .then(result=>{
+        
+            console.log(result.user);
+            
+        })
+        .catch(error=>console.log(error.message))
+
     }
     return (
         <div>
@@ -74,7 +83,7 @@ const Login = () => {
                 <button onClick={ handelGoogleSign} type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> <span className='caret-emerald-900 gap-4'><i class="fa-brands fa-google "></i></span> Google your account</button>
 
 
-                <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 gap-36"> <span><i class="fa-brands fa-github gap-10"></i></span> Github your account</button>
+                <button onClick={handleGithubSign}  type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 gap-36"> <span><i class="fa-brands fa-github gap-10"></i></span> Github your account</button>
 
             </div>
 

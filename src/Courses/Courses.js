@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Courses = () => {
  const programing = useLoaderData()
+ console.log()
  const handleClick  = ()=>{
 
  }

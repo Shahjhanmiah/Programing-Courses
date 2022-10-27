@@ -4,10 +4,12 @@ import DetaillsPage from '../DetailsPage/DetaillsPage';
 import RigthSide from '../RigthSIde/RigthSide';
 
 const Sidebar = ({programing}) => {
-    const {couress,details,name,id,programings}=programing;
+    const {couress,details,name,id,}=programing
     
     return (
         <div>
+
+          
             
             
        

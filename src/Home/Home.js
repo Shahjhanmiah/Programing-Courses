@@ -16,7 +16,7 @@ const Home = () => {
                         </p>
             </div>
             <div className='img-container'>
-                <img src='https://image.shutterstock.com/image-vector/web-development-coding-programming-responsive-600w-1449924503.jpg' ></img>
+                <img src ></img>
 
             </div>
         </div>
