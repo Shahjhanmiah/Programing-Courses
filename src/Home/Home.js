@@ -2,13 +2,14 @@ import React from 'react';
 import './Home.css';
 import './Home.css'
 import assest from '../assest/programming-courses-back.jpg'
+import Programig from '../Programig';
 
 const Home = () => {
     return (
-        <section className="dark:bg-gray-800 dark:text-gray-100">
+        <section className="dark:bg-gray-800 dark:text-gray-100"data-aos="zoom-in-up"ata-aos-duration="50">
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
             <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                <img src="https://cdn.dribbble.com/users/9741/screenshots/17082373/media/6ace78ce32fcb1254079fad72b5255ce.png?compress=1&resize=400x300&vertical=top" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                <img src="https://cdn.dribbble.com/users/9741/screenshots/17082373/media/6ace78ce32fcb1254079fad72b5255ce.png?compress=1&resize=400x300&vertical=top" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 w-full h-80" />
             </div>
             <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                 <h1 className="text-5xl font-bold leading-none sm:text-6xl">Ac mattis
@@ -22,7 +23,9 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <Programig></Programig>
     </section>
+    
     );
 };
 
