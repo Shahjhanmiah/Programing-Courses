@@ -14,6 +14,7 @@ const Register = () => {
     const handleSubmit = event => {
         event.preventDefault()
         console.log(event.target.email);
+        
     
     
         const name = event.target.name.value
@@ -60,6 +61,8 @@ const Register = () => {
                     toast.error(error.message)
                   })
           })
+          
+          
           
       }
    

@@ -30,7 +30,7 @@ function App() {
         },
         {
           path:'/courses',
-          loader:()=>fetch('http://localhost:5000/programing'),
+          loader:()=>fetch('https://server-site-pearl.vercel.app/programing'),
           element:<PrivateRoute><Courses></Courses></PrivateRoute>
         },
         {
@@ -57,8 +57,8 @@ function App() {
         },
         {
            path:'/detailspage/:id',
-            // loader:()=>fetch(`http://localhost:5000/programings/1$`),
-            loader:({params})=>fetch(`http://localhost:5000/programing/${params.id}`),
+            // loader:()=>fetch(`https://server-site-pearl.vercel.app/programings/1$`),
+            loader:({params})=>fetch(`https://server-site-pearl.vercel.app/programing/${params.id}`),
     
           
             element:<DetaillsPage></DetaillsPage>
@@ -70,7 +70,7 @@ function App() {
           {
           path:'/detaillsShow/:id',
 
-          loader:({params})=>fetch(`http://localhost:5000/programing/${params.id}`),
+          loader:({params})=>fetch(`https://server-site-pearl.vercel.app/programing/${params.id}`),
           element:<DetailsShow></DetailsShow>
           }
 
