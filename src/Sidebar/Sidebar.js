@@ -13,7 +13,7 @@ const Sidebar = ({programing}) => {
             
             
        
-<div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 animate-pulse duration-150 ">
     <div href="#">
         <img className="rounded-t-lg w-full h-80" src={couress}alt=""/>
     </div>
