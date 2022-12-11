@@ -5,21 +5,24 @@ import assest from '../assest/programming-courses-back.jpg'
 
 const Home = () => {
     return (
-        <div class="container">
-            <div className='half-width '>
-                <p >Best computer programming courses are always in demand. Especially now.
-                        top computer courses available now that you can pursue. Before
-                        deep-diving into the content Computer programming is always evolving.
-                        20 years ago, no computer science students would have imagined machine learning 
-                        to progress so far that it would be present in the homes of common people. But for
-                        the last 5 years, machine learning
-                        </p>
+        <section className="dark:bg-gray-800 dark:text-gray-100">
+        <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                <img src="https://cdn.dribbble.com/users/9741/screenshots/17082373/media/6ace78ce32fcb1254079fad72b5255ce.png?compress=1&resize=400x300&vertical=top" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
             </div>
-            <div className='img-container'>
-                <img src ></img>
-
+            <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                <h1 className="text-5xl font-bold leading-none sm:text-6xl">Ac mattis
+                    <span className="dark:text-violet-400">senectus</span>erat pharetra
+                </h1>
+                <p className="mt-6 mb-8 text-lg sm:mb-12">Dictum aliquam porta in condimentum ac integer</p>
+                   
+                <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+                    <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Suspendisse</a>
+                    <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100">Malesuada</a>
+                </div>
             </div>
         </div>
+    </section>
     );
 };
 

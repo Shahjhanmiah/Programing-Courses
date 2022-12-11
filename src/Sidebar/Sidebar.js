@@ -13,7 +13,7 @@ const Sidebar = ({programing}) => {
             
             
        
-<div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 "data-aos="zoom-in-up"ata-aos-duration="1000">
+<div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 "data-aos="zoom-in-up"ata-aos-duration="50">
     <div href="#">
         <img className="rounded-t-lg w-full h-80 " src={couress}alt=""/>
     </div>

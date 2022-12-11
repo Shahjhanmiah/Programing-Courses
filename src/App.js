@@ -25,7 +25,7 @@ function App() {
       errorElement: <ErrorPage />,
       children:[
         {
-          path:'/home',
+          path:'/',
           element:<Home></Home>
         },
         {
